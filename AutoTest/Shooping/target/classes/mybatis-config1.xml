@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--引入jdbc配置文件-->
+    <properties resource="jdbc1.properties"/>
+    <!--设置Mybatis的全局配置-->
+    <settings>
+        <!--将下线自动映射为驼峰,emp_name:empName-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <!--类型别名，方便拼写sql不需要导包直接写类名-->
+    <typeAliases>
+        <package name="com.test.autotest.bean"/>
+    </typeAliases>
+    <environments default="test">
+        <environment id="test">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc1.driver}"/>
+                <property name="url" value="${jdbc1.url}"/>
+                <property name="username" value="${jdbc1.username}"/>
+                <property name="password" value="${jdbc1.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--引入映射文件-->
+    <mappers>
+        <mapper resource="com/test/autotest/mapper/UserMapper1.xml"/>
+    </mappers>
+</configuration>
