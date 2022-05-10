@@ -101,6 +101,12 @@
             <version>1.7.32</version>
             <scope>compile</scope>
         </dependency>
+        <!--解决mybatis.io日志乱码的依赖-->
+        <dependency>
+            <groupId>org.jboss</groupId>
+            <artifactId>jboss-vfs</artifactId>
+            <version>3.2.15.Final</version>
+        </dependency>
     </dependencies>
     <build>
         <resources>
