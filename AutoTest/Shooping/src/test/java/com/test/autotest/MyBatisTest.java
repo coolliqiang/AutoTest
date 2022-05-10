@@ -1,4 +1,4 @@
-package com.test.autotest;
+/*package com.test.autotest;
 
 import com.test.autotest.bean.User;
 import com.test.autotest.mapper.UserMapper;
@@ -19,8 +19,8 @@ public class MyBatisTest {
         System.out.println("result:"+result);
 
 
-        /*List<User> users = mapper.selectAll();
-        System.out.println(users);*/
+        *//*List<User> users = mapper.selectAll();
+        System.out.println(users);*//*
     }
 
     @Test
@@ -38,4 +38,4 @@ public class MyBatisTest {
         mapper.deleteAll();
     }
 
-}
+}*/

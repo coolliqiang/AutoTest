@@ -34,12 +34,12 @@ public class TestRegister {
         return users;
     }
 
-    @DataProvider
+    /*@DataProvider
     public static Object[][] toData(){
         return DataUtils.datas();
-    }
+    }*/
 
-    @Test(dataProvider = "toData")
+  /*  @Test(dataProvider = "toData")
     public void testRegister(String username,String password){
         String result = MyHttpUtils.doPost(username, password);
         System.out.println(result);
@@ -48,9 +48,9 @@ public class TestRegister {
         }else {
             Assert.assertTrue(result.contains("true"),"passed");
         }
-    }
+    }*/
 
-    @Test(groups = "注册接口",description = "执行所有用例")
+/*    @Test(groups = "注册接口",description = "执行所有用例")
     public void testRegister0(){
         SqlSession sqlSession = MyBatisUtil.getSqlSession(MapperConfigXMLFileName_default);
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
@@ -75,7 +75,7 @@ public class TestRegister {
             }
         }
 
-    }
+    }*/
     @Test(groups = "注册接口",description = "正确的用户名和密码")
     public void testRegister1(){
         boolean expected = true;

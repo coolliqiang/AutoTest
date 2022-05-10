@@ -8,10 +8,12 @@
     <artifactId>Shooping</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <!--<properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-    </properties>-->
+    <properties>
+        <!--<suiteXmlFile>src/main/resources/testng.xml</suiteXmlFile>-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+    </properties>
     <dependencies>
         <!--mysql数据驱动包-->
         <dependency>
@@ -93,6 +95,12 @@
             <version>7.4.0</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.32</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
     <build>
         <resources>
@@ -121,26 +129,39 @@
                 <artifactId>maven-surefire-plugins</artifactId>
                 <version>2.20</version>
                 <configuration>
-                    <!--<skipTests>true</skipTests>-->
                     <systemPropertyVariables>
-                        <org.ucommons.reportng.escape-output>false</org.ucommons.reportng.escape-output>
+                       <!-- <org.ucommons.reportng.escape-output>false</org.ucommons.reportng.escape-output>-->
+                        <maven.surefire.debug>true</maven.surefire.debug>
                     </systemPropertyVariables>
                     <!--测试失败后，是否忽略并继续测试-->
                     <testFailureIginore>true</testFailureIginore>
-                    <argLine>
-                        -Dfile.encoding=UTF-8
-                    </argLine>
+                    <!--<forkMode>once</forkMode>-->
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.7/aspectjweaver-1.9.7jar"
                     </argLine>
-                    <suiteXmlFile>./src/main/resources/testng.xml</suiteXmlFile>
-                    <!--<systemProperties>
-                        <property>
+                    <encoding>UTF-8</encoding>
+
+                    <suiteXmlFiles>
+
+                        <suiteXmlFile>src/main/resources/testng.xml</suiteXmlFile>
+
+                    </suiteXmlFiles>
+
+                    <systemProperties>
+                        <!--<property>
                             <workingDirectory>target/</workingDirectory>
                             <name>allure.results.directory</name>
                             <value>${project.build.directory}/allure-results</value>
-                        </property>
-                    </systemProperties>-->
+                        </property>-->
+                    </systemProperties>
+                    <!--<test>TestRegister1.java</test>-->
+                   <!-- <includes>
+                        <include>**/*Test*.java</include>
+                    </includes>
+                    <excludes>
+                        <exclude>**/*MyBatisTest*.java</exclude>
+                    </excludes>-->
                 </configuration>
 
                 <dependencies>
@@ -160,6 +181,19 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+      <!--      <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>2.7</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <locales>zh_CN</locales>
+                </configuration>
+            </plugin>-->
         </plugins>
     </build>
 </project>
