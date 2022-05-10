@@ -136,7 +136,7 @@
                 <version>2.20</version>
                 <configuration>
                     <systemPropertyVariables>
-                       <!-- <org.ucommons.reportng.escape-output>false</org.ucommons.reportng.escape-output>-->
+                        <org.ucommons.reportng.escape-output>false</org.ucommons.reportng.escape-output>
                         <maven.surefire.debug>true</maven.surefire.debug>
                     </systemPropertyVariables>
                     <!--测试失败后，是否忽略并继续测试-->
