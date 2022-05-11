@@ -5,7 +5,6 @@ import com.test.autotest.mapper.UserMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.testng.annotations.DataProvider;
 
-
 import java.util.List;
 
 import static com.test.autotest.util.MyBatisUtil.MapperConfigXMLFileName_default;
@@ -41,5 +40,13 @@ public class DataUtils {
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         List<User> users = mapper.selectAll();
         return users;
+    }
+    //判断用例数据是否存在
+    public static Boolean isCaseNameExists(User queryRowData){
+        if(queryRowData==null){
+            throw new RuntimeException("用例数据不存在！");
+        }else {
+            return true;
+        }
     }
 }

@@ -79,130 +79,148 @@ public class TestRegister {
     @Test(groups = "注册接口",description = "正确的用户名和密码")
     public void testRegister1(){
         boolean expected = true;
-        String result = null;
+        String caseName = "正确的用户名和密码";
         for (User user:users){
-            //判断如何用例满足条件则取出接口所需字段并调用接口
-            if(user.getId()==1){
-                result = MyHttpUtils.doPost(user.getUsername(), user.getPassword());
-                logger.info("用例id:"+user.getId()+",用户名:"+user.getUsername()+",密码:"
-                        +user.getPassword()+",用例描述："+user.getCaseDesc());
-                //断言
-                expected = result.contains("200");
-                Assert.assertTrue(expected);
-                logger.info("测试结果："+result);
-                System.out.println();
+            if(DataUtils.isCaseNameExists(user)){
+                //判断如何用例满足条件则取出接口所需字段并调用接口
+                if(caseName.equals(user.getCaseDesc())){
+                    String result = MyHttpUtils.doPost(user.getUsername(), user.getPassword());
+                    logger.info("用例id:"+user.getId()+",用户名:"+user.getUsername()+",密码:"
+                            +user.getPassword()+",用例描述："+user.getCaseDesc());
+                    //断言
+                    expected = result.contains("200");
+                    Assert.assertTrue(expected);
+                    logger.info("测试结果："+result);
+                    System.out.println();
 
+                }
             }
         }
     }
 
     @Test(groups = "注册接口",description = "用户名为空")
     public void testRegister2(){
+        String caseName = "用户名为空";
         boolean expected = true;
-        SqlSession sqlSession = MyBatisUtil.getSqlSession(MapperConfigXMLFileName_default);
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        User user = mapper.selectOne(2);
-        String result = MyHttpUtils.doPost(user.getUsername(), user.getPassword());
-        logger.info("用例id:"+user.getId()+",用户名:"+user.getUsername()+",密码:"
-                +user.getPassword()+",用例描述："+user.getCaseDesc());
-        //断言
-        expected = result.contains("100");
-        Assert.assertTrue(expected);
-        logger.info("测试结果："+result);
-        System.out.println();
+        UserMapper mapper = getUserMapper();
+        User user = mapper.selectOneByCaseName(caseName);
+        if(DataUtils.isCaseNameExists(user)){
+            String result = MyHttpUtils.doPost(user.getUsername(), user.getPassword());
+            logger.info("用例id:"+user.getId()+",用户名:"+user.getUsername()+",密码:"
+                    +user.getPassword()+",用例描述："+user.getCaseDesc());
+            //断言
+            expected = result.contains("100");
+            Assert.assertTrue(expected);
+            logger.info("测试结果："+result);
+            System.out.println();
+        }
 
     }
 
-    @Test(groups = "注册接口",description = "密码名为空")
-    public void testRegister3(){
-        boolean expected = true;
+    private UserMapper getUserMapper() {
         SqlSession sqlSession = MyBatisUtil.getSqlSession(MapperConfigXMLFileName_default);
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        User user = mapper.selectOne(3);
-        String result = MyHttpUtils.doPost(user.getUsername(), user.getPassword());
-        logger.info("用例id:"+user.getId()+",用户名:"+user.getUsername()+",密码:"
-                +user.getPassword()+",用例描述："+user.getCaseDesc());
-        expected = result.contains("100");
-        Assert.assertTrue(expected);
-        logger.info("测试结果："+result);
-        System.out.println();
+        return sqlSession.getMapper(UserMapper.class);
+    }
+
+    @Test(groups = "注册接口",description = "密码为空")
+    public void testRegister3(){
+        String caseName = "密码为空";
+        boolean expected = true;
+        UserMapper mapper = getUserMapper();
+        User user = mapper.selectOneByCaseName(caseName);
+        if(DataUtils.isCaseNameExists(user)){
+            String result = MyHttpUtils.doPost(user.getUsername(), user.getPassword());
+            logger.info("用例id:"+user.getId()+",用户名:"+user.getUsername()+",密码:"
+                    +user.getPassword()+",用例描述："+user.getCaseDesc());
+            expected = result.contains("100");
+            Assert.assertTrue(expected);
+            logger.info("测试结果："+result);
+            System.out.println();
+        }
 
 
     }
 
     @Test(groups = "注册接口",description = "用户名已存在")
     public void testRegister4(){
-        boolean expected = true;
-        SqlSession sqlSession = MyBatisUtil.getSqlSession(MapperConfigXMLFileName_default);
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        User user = mapper.selectOne(4);
-        String result = MyHttpUtils.doPost(user.getUsername(), user.getPassword());
-        logger.info("用例id:"+user.getId()+",用户名:"+user.getUsername()+",密码:"
-                +user.getPassword()+",用例描述："+user.getCaseDesc());
-        //断言
-        expected = result.contains("100");
-        Assert.assertTrue(expected);
-        logger.info("测试结果："+result);
-        System.out.println();
+        String caseName = "用户名已存在";
+        UserMapper mapper = getUserMapper();
+        User user = mapper.selectOneByCaseName(caseName);
+        if(DataUtils.isCaseNameExists(user)){
+            boolean expected = true;
+            String result = MyHttpUtils.doPost(user.getUsername(), user.getPassword());
+            logger.info("用例id:"+user.getId()+",用户名:"+user.getUsername()+",密码:"
+                    +user.getPassword()+",用例描述："+user.getCaseDesc());
+            //断言
+            expected = result.contains("100");
+            Assert.assertTrue(expected);
+            logger.info("测试结果："+result);
+            System.out.println();
+        }
 
     }
 
     @Test(groups = "注册接口",description = "用户名带有空格字符")
     public void testRegister5(){
-        boolean expected = true;
-        SqlSession sqlSession = MyBatisUtil.getSqlSession(MapperConfigXMLFileName_default);
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        User user = mapper.selectOne(5);
-        String result = MyHttpUtils.doPost(user.getUsername(), user.getPassword());
-        logger.info("用例id:"+user.getId()+",用户名:"+user.getUsername()+",密码:"
-                +user.getPassword()+",用例描述："+user.getCaseDesc());
+        String caseName = "用户名带有空格字符";
+        UserMapper mapper = getUserMapper();
+        User user = mapper.selectOneByCaseName(caseName);
+        if(DataUtils.isCaseNameExists(user)){
+            String result = MyHttpUtils.doPost(user.getUsername(), user.getPassword());
+            logger.info("用例id:"+user.getId()+",用户名:"+user.getUsername()+",密码:"
+                    +user.getPassword()+",用例描述："+user.getCaseDesc());
 
-        //断言
-        expected = result.contains("100");
-        Assert.assertTrue(expected);
-        logger.info("测试结果："+result);
-        System.out.println();
+            boolean expected = true;
+            //断言
+            expected = result.contains("100");
+            Assert.assertTrue(expected);
+            logger.info("测试结果："+result);
+            System.out.println();
+        }
 
     }
 
-    @Test(groups = "注册接口",description = "正确的用户名和密码")
-    public void testRegister14(){
+    @Test(groups = "注册接口",description = "用户名长度超限")
+    public void testRegister6(){
+        String caseName = "用户名长度超限";
+        String result = null;
+        UserMapper userMapper = getUserMapper();
+        User user = userMapper.selectOneByCaseName(caseName);
+        if(DataUtils.isCaseNameExists(user)){
+            result = MyHttpUtils.doPost(user.getUsername(), user.getPassword());
+            logger.info("用例id:"+user.getId()+",用户名:"+user.getUsername()+",密码:"
+                    +user.getPassword()+",用例描述："+user.getCaseDesc());
+            //断言
+            boolean expected = true;
+            expected = result.contains("100");
+            Assert.assertTrue(expected);
+            logger.info("测试结果："+result);
+            System.out.println();
+        }
+
+    }
+
+    @Test(groups = "注册接口",description = "用户名长度少于规则长度")
+    public void testRegister7(){
+        String casesName = "用户名长度少于规则长度";
         boolean expected = true;
         String result = null;
         for (User user:users){
-            //判断如何用例满足条件则取出接口所需字段并调用接口
-            if(user.getId()==14){
-                result = MyHttpUtils.doPost(user.getUsername(), user.getPassword());
-                logger.info("用例id:"+user.getId()+",用户名:"+user.getUsername()+",密码:"
-                        +user.getPassword()+",用例描述："+user.getCaseDesc());
-                //断言
-                expected = result.contains("200");
-                Assert.assertTrue(expected);
-                logger.info("测试结果："+result);
-                System.out.println();
+            if(DataUtils.isCaseNameExists(user)){
+                //判断如何用例满足条件则取出接口所需字段并调用接口
+                if(casesName.equals(user.getCaseDesc())){
+                    result = MyHttpUtils.doPost(user.getUsername(), user.getPassword());
+                    logger.info("用例id:"+user.getId()+",用户名:"+user.getUsername()+",密码:"
+                            +user.getPassword()+",用例描述："+user.getCaseDesc());
+                    //断言
+                    expected = result.contains("100");
+                    Assert.assertTrue(expected);
+                    logger.info("测试结果："+result);
+                    System.out.println();
+                }
             }
         }
     }
-
-    @Test(groups = "注册接口",description = "正确的用户名和密码")
-    public void testRegister15(){
-        boolean expected = true;
-        String result = null;
-        for (User user:users){
-            //判断如何用例满足条件则取出接口所需字段并调用接口
-            if(user.getId()==15){
-                result = MyHttpUtils.doPost(user.getUsername(), user.getPassword());
-                logger.info("用例id:"+user.getId()+",用户名:"+user.getUsername()+",密码:"
-                        +user.getPassword()+",用例描述："+user.getCaseDesc());
-                //断言
-                expected = result.contains("200");
-                Assert.assertTrue(expected);
-                logger.info("测试结果："+result);
-                System.out.println();
-            }
-        }
-    }
-
 
 
 }

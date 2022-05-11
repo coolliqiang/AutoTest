@@ -3,15 +3,15 @@
 <suite name="test">
     <test name="register">
         <classes>
-            <class name="com.test.autotest.cases.TestRegister1">
+            <class name="com.test.autotest.cases.TestRegister">
                 <methods>
                     <include name="testRegister1"/>
-               <!--     <include name="testRegister2"/>
+                    <include name="testRegister2"/>
                     <include name="testRegister3"/>
                     <include name="testRegister4"/>
                     <include name="testRegister5"/>
-                    <include name="testRegister14"/>
-                    <include name="testRegister15"/>-->
+                  <!--  <include name="testRegister6"/>
+                    <include name="testRegister7"/>-->
                 </methods>
             </class>
         </classes>

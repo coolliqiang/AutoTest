@@ -1,4 +1,4 @@
 com\test\autotest\cases\TestRegister.class
-com\test\autotest\util\DataUtils.class
 com\test\autotest\cases\TestLogin.class
+com\test\autotest\MyBatisTest.class
 com\test\autotest\util\AssertUtils.class

@@ -1,12 +1,18 @@
 package com.test.autotest.bean;
 
+import lombok.Data;
+
+import java.util.Map;
+
+
+@Data
 public class User {
     private Integer id;
     private String username;
     private String password;
     private String caseDesc;
-
-    public User() {
+    private Integer checkId;
+    /*public User() {
     }
 
     @Override
@@ -81,5 +87,5 @@ public class User {
                 ", password='" + password + '\'' +
                 ", caseDesc='" + caseDesc + '\'' +
                 '}';
-    }
+    }*/
 }

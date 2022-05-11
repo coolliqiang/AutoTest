@@ -8,12 +8,18 @@
    </select>
 
    <insert id="insert"  useGeneratedKeys="true" keyProperty="id">
-       insert into t_user values (null,#{username},#{password});
+       insert into t_user values (null,#{username},#{password},#{caseDesc},#{checkId});
    </insert>
    <select id="selectOne" parameterType="Integer" resultType="User">
        select * from t_user
        <where>
          id = #{id};
+       </where>
+   </select>
+   <select id="selectOneByCaseName" parameterType="String" resultType="User">
+       select * from t_user
+       <where>
+           case_desc = #{caseDesc};
        </where>
    </select>
 </mapper>

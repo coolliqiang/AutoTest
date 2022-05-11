@@ -22,4 +22,6 @@ public interface UserMapper {
      * @return
      */
     User selectOne(@Param("id") Integer id);
+
+    User selectOneByCaseName(@Param("caseDesc") String caseDesc);
 }

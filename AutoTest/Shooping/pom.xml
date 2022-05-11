@@ -150,10 +150,15 @@
 
                     <suiteXmlFiles>
 
-                        <suiteXmlFile>src/main/resources/testng.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
 
                     </suiteXmlFiles>
-
+                    <properties>
+                        <property>
+                            <name>test</name>
+                            <value>register</value>
+                        </property>
+                    </properties>
                     <systemProperties>
                         <!--<property>
                             <workingDirectory>target/</workingDirectory>
@@ -161,13 +166,13 @@
                             <value>${project.build.directory}/allure-results</value>
                         </property>-->
                     </systemProperties>
-                    <!--<test>TestRegister1.java</test>-->
-                   <!-- <includes>
-                        <include>**/*Test*.java</include>
+                    <!--<test>TestRegister.java</test>-->
+                    <includes>
+                        <include>**/*Test.java</include>
                     </includes>
                     <excludes>
-                        <exclude>**/*MyBatisTest*.java</exclude>
-                    </excludes>-->
+                        <exclude>**/MyBatisTest.java</exclude>
+                    </excludes>
                 </configuration>
 
                 <dependencies>

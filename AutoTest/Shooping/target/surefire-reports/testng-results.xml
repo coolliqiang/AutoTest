@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
+<testng-results skipped="0" failed="0" ignored="4" total="11" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Command line suite" duration-ms="1560" started-at="2022-05-11T01:24:33 CST" finished-at="2022-05-11T01:24:35 CST">
+  <suite name="Command line suite" duration-ms="1445" started-at="2022-05-12T03:01:27 CST" finished-at="2022-05-12T03:01:28 CST">
     <groups>
       <group name="注册接口">
-        <method signature="TestRegister.testRegister1()[pri:0, instance:com.test.autotest.cases.TestRegister@4e41089d]" name="testRegister1" class="com.test.autotest.cases.TestRegister"/>
-        <method signature="TestRegister.testRegister14()[pri:0, instance:com.test.autotest.cases.TestRegister@4e41089d]" name="testRegister14" class="com.test.autotest.cases.TestRegister"/>
-        <method signature="TestRegister.testRegister15()[pri:0, instance:com.test.autotest.cases.TestRegister@4e41089d]" name="testRegister15" class="com.test.autotest.cases.TestRegister"/>
-        <method signature="TestRegister.testRegister2()[pri:0, instance:com.test.autotest.cases.TestRegister@4e41089d]" name="testRegister2" class="com.test.autotest.cases.TestRegister"/>
-        <method signature="TestRegister.testRegister3()[pri:0, instance:com.test.autotest.cases.TestRegister@4e41089d]" name="testRegister3" class="com.test.autotest.cases.TestRegister"/>
-        <method signature="TestRegister.testRegister4()[pri:0, instance:com.test.autotest.cases.TestRegister@4e41089d]" name="testRegister4" class="com.test.autotest.cases.TestRegister"/>
-        <method signature="TestRegister.testRegister5()[pri:0, instance:com.test.autotest.cases.TestRegister@4e41089d]" name="testRegister5" class="com.test.autotest.cases.TestRegister"/>
+        <method signature="TestRegister.testRegister1()[pri:0, instance:com.test.autotest.cases.TestRegister@701fc37a]" name="testRegister1" class="com.test.autotest.cases.TestRegister"/>
+        <method signature="TestRegister.testRegister2()[pri:0, instance:com.test.autotest.cases.TestRegister@701fc37a]" name="testRegister2" class="com.test.autotest.cases.TestRegister"/>
+        <method signature="TestRegister.testRegister3()[pri:0, instance:com.test.autotest.cases.TestRegister@701fc37a]" name="testRegister3" class="com.test.autotest.cases.TestRegister"/>
+        <method signature="TestRegister.testRegister4()[pri:0, instance:com.test.autotest.cases.TestRegister@701fc37a]" name="testRegister4" class="com.test.autotest.cases.TestRegister"/>
+        <method signature="TestRegister.testRegister5()[pri:0, instance:com.test.autotest.cases.TestRegister@701fc37a]" name="testRegister5" class="com.test.autotest.cases.TestRegister"/>
+        <method signature="TestRegister.testRegister6()[pri:0, instance:com.test.autotest.cases.TestRegister@701fc37a]" name="testRegister6" class="com.test.autotest.cases.TestRegister"/>
+        <method signature="TestRegister.testRegister7()[pri:0, instance:com.test.autotest.cases.TestRegister@701fc37a]" name="testRegister7" class="com.test.autotest.cases.TestRegister"/>
       </group> <!-- 注册接口 -->
     </groups>
-    <test name="Command line test" duration-ms="1560" started-at="2022-05-11T01:24:33 CST" finished-at="2022-05-11T01:24:35 CST">
+    <test name="Command line test" duration-ms="1445" started-at="2022-05-12T03:01:27 CST" finished-at="2022-05-12T03:01:28 CST">
       <class name="com.test.autotest.cases.TestRegister">
-        <test-method status="PASS" signature="clearTable()[pri:0, instance:com.test.autotest.cases.TestRegister@4e41089d]" name="clearTable" is-config="true" duration-ms="884" started-at="2022-05-11T01:24:33 CST" finished-at="2022-05-11T01:24:34 CST">
+        <test-method status="PASS" signature="clearTable()[pri:0, instance:com.test.autotest.cases.TestRegister@701fc37a]" name="clearTable" is-config="true" duration-ms="847" started-at="2022-05-12T03:01:27 CST" finished-at="2022-05-12T03:01:27 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clearTable -->
-        <test-method status="PASS" signature="getAllCasesBeforeTest()[pri:0, instance:com.test.autotest.cases.TestRegister@4e41089d]" name="getAllCasesBeforeTest" is-config="true" duration-ms="96" started-at="2022-05-11T01:24:34 CST" finished-at="2022-05-11T01:24:34 CST">
+        <test-method status="PASS" signature="getAllCasesBeforeTest()[pri:0, instance:com.test.autotest.cases.TestRegister@701fc37a]" name="getAllCasesBeforeTest" is-config="true" duration-ms="96" started-at="2022-05-12T03:01:27 CST" finished-at="2022-05-12T03:01:28 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getAllCasesBeforeTest -->
-        <test-method status="PASS" signature="testRegister1()[pri:0, instance:com.test.autotest.cases.TestRegister@4e41089d]" name="testRegister1" duration-ms="221" started-at="2022-05-11T01:24:34 CST" description="正确的用户名和密码" finished-at="2022-05-11T01:24:34 CST">
+        <test-method status="PASS" signature="testRegister1()[pri:0, instance:com.test.autotest.cases.TestRegister@701fc37a]" name="testRegister1" duration-ms="228" started-at="2022-05-12T03:01:28 CST" description="正确的用户名和密码" finished-at="2022-05-12T03:01:28 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRegister1 -->
-        <test-method status="PASS" signature="testRegister14()[pri:0, instance:com.test.autotest.cases.TestRegister@4e41089d]" name="testRegister14" duration-ms="86" started-at="2022-05-11T01:24:34 CST" description="正确的用户名和密码" finished-at="2022-05-11T01:24:34 CST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testRegister14 -->
-        <test-method status="PASS" signature="testRegister15()[pri:0, instance:com.test.autotest.cases.TestRegister@4e41089d]" name="testRegister15" duration-ms="53" started-at="2022-05-11T01:24:34 CST" description="正确的用户名和密码" finished-at="2022-05-11T01:24:34 CST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testRegister15 -->
-        <test-method status="PASS" signature="testRegister2()[pri:0, instance:com.test.autotest.cases.TestRegister@4e41089d]" name="testRegister2" duration-ms="51" started-at="2022-05-11T01:24:34 CST" description="用户名为空" finished-at="2022-05-11T01:24:35 CST">
+        <test-method status="PASS" signature="testRegister2()[pri:0, instance:com.test.autotest.cases.TestRegister@701fc37a]" name="testRegister2" duration-ms="60" started-at="2022-05-12T03:01:28 CST" description="用户名为空" finished-at="2022-05-12T03:01:28 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRegister2 -->
-        <test-method status="PASS" signature="testRegister3()[pri:0, instance:com.test.autotest.cases.TestRegister@4e41089d]" name="testRegister3" duration-ms="50" started-at="2022-05-11T01:24:35 CST" description="密码名为空" finished-at="2022-05-11T01:24:35 CST">
+        <test-method status="PASS" signature="testRegister3()[pri:0, instance:com.test.autotest.cases.TestRegister@701fc37a]" name="testRegister3" duration-ms="51" started-at="2022-05-12T03:01:28 CST" description="密码为空" finished-at="2022-05-12T03:01:28 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRegister3 -->
-        <test-method status="PASS" signature="testRegister4()[pri:0, instance:com.test.autotest.cases.TestRegister@4e41089d]" name="testRegister4" duration-ms="53" started-at="2022-05-11T01:24:35 CST" description="用户名已存在" finished-at="2022-05-11T01:24:35 CST">
+        <test-method status="PASS" signature="testRegister4()[pri:0, instance:com.test.autotest.cases.TestRegister@701fc37a]" name="testRegister4" duration-ms="53" started-at="2022-05-12T03:01:28 CST" description="用户名已存在" finished-at="2022-05-12T03:01:28 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRegister4 -->
-        <test-method status="PASS" signature="testRegister5()[pri:0, instance:com.test.autotest.cases.TestRegister@4e41089d]" name="testRegister5" duration-ms="41" started-at="2022-05-11T01:24:35 CST" description="用户名带有空格字符" finished-at="2022-05-11T01:24:35 CST">
+        <test-method status="PASS" signature="testRegister5()[pri:0, instance:com.test.autotest.cases.TestRegister@701fc37a]" name="testRegister5" duration-ms="38" started-at="2022-05-12T03:01:28 CST" description="用户名带有空格字符" finished-at="2022-05-12T03:01:28 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRegister5 -->
+        <test-method status="PASS" signature="testRegister6()[pri:0, instance:com.test.autotest.cases.TestRegister@701fc37a]" name="testRegister6" duration-ms="38" started-at="2022-05-12T03:01:28 CST" description="用户名长度超限" finished-at="2022-05-12T03:01:28 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister6 -->
+        <test-method status="PASS" signature="testRegister7()[pri:0, instance:com.test.autotest.cases.TestRegister@701fc37a]" name="testRegister7" duration-ms="8" started-at="2022-05-12T03:01:28 CST" description="用户名长度少于规则长度" finished-at="2022-05-12T03:01:28 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegister7 -->
       </class> <!-- com.test.autotest.cases.TestRegister -->
     </test> <!-- Command line test -->
   </suite> <!-- Command line suite -->
