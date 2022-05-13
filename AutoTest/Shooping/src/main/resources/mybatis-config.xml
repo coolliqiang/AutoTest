@@ -27,6 +27,7 @@
     </environments>
     <!--引入映射文件-->
     <mappers>
-        <mapper resource="com/test/autotest/mapper/UserMapper.xml"/>
+        <mapper resource="com/test/autotest/mapper/RegisterInfoMapper.xml"/>
+        <mapper resource="com/test/autotest/mapper/LoginInfoMapper.xml"/>
     </mappers>
 </configuration>

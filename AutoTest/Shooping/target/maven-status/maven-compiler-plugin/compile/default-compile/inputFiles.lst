@@ -1,8 +1,13 @@
 D:\mygitbranch\AutoTest\AutoTest\Shooping\src\main\java\com\test\autotest\reportconfig\ExtentTestNGReporterListener.java
+D:\mygitbranch\AutoTest\AutoTest\Shooping\src\main\java\com\test\autotest\bean\LoginInfo.java
+D:\mygitbranch\AutoTest\AutoTest\Shooping\src\main\java\com\test\autotest\bean\RegisterInfo.java
 D:\mygitbranch\AutoTest\AutoTest\Shooping\src\main\java\com\test\autotest\util\MyBatisUtil.java
-D:\mygitbranch\AutoTest\AutoTest\Shooping\src\main\java\com\test\autotest\bean\User.java
+D:\mygitbranch\AutoTest\AutoTest\Shooping\src\main\java\com\test\autotest\mapper\RegisterInfoMapper.java
+D:\mygitbranch\AutoTest\AutoTest\Shooping\src\main\java\com\test\autotest\util\TestUrlConfig.java
+D:\mygitbranch\AutoTest\AutoTest\Shooping\src\main\java\com\test\autotest\util\ConfigFile.java
 D:\mygitbranch\AutoTest\AutoTest\Shooping\src\main\java\com\test\autotest\util\DataUtils.java
 D:\mygitbranch\AutoTest\AutoTest\Shooping\src\main\java\com\test\autotest\bean\User1.java
-D:\mygitbranch\AutoTest\AutoTest\Shooping\src\main\java\com\test\autotest\mapper\UserMapper.java
+D:\mygitbranch\AutoTest\AutoTest\Shooping\src\main\java\com\test\autotest\util\InterfaceName.java
+D:\mygitbranch\AutoTest\AutoTest\Shooping\src\main\java\com\test\autotest\mapper\LoginInfoMapper.java
 D:\mygitbranch\AutoTest\AutoTest\Shooping\src\main\java\com\test\autotest\mapper\UserMapper1.java
 D:\mygitbranch\AutoTest\AutoTest\Shooping\src\main\java\com\test\autotest\util\MyHttpUtils.java

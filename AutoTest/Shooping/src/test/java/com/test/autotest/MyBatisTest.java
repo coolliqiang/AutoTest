@@ -1,11 +1,10 @@
 package com.test.autotest;
 
-import com.test.autotest.bean.User;
-import com.test.autotest.mapper.UserMapper;
+import com.test.autotest.bean.RegisterInfo;
+import com.test.autotest.mapper.RegisterInfoMapper;
 import com.test.autotest.mapper.UserMapper1;
-import com.test.autotest.util.DataUtils;
 import com.test.autotest.util.MyBatisUtil;
-import lombok.Data;
+import com.test.autotest.util.MyHttpUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.testng.annotations.Test;
 
@@ -18,28 +17,28 @@ public class MyBatisTest {
     @Test(enabled = false)
     public void testInsertUser(){
         SqlSession sqlSession = MyBatisUtil.getSqlSession(MapperConfigXMLFileName_default);
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        User user = new User();
-        user.setUsername("");
-        user.setPassword("");
-        user.setCheckId(16);
-        user.setCaseDesc("");
-        int result = mapper.insert(user);
+        RegisterInfoMapper mapper = sqlSession.getMapper(RegisterInfoMapper.class);
+        RegisterInfo registerInfo = new RegisterInfo();
+        registerInfo.setUsername("");
+        registerInfo.setPassword("");
+        registerInfo.setCheckId(16);
+        registerInfo.setCaseDesc("");
+        int result = mapper.insert(registerInfo);
         System.out.println("result:"+result);
 
 
-        List<User> users = mapper.selectAll();
-        System.out.println(users);
+        List<RegisterInfo> registerInfos = mapper.selectAll();
+        System.out.println(registerInfos);
     }
 
 
     @Test(enabled = false)
     public void testSelectOne(){
         SqlSession sqlSession = MyBatisUtil.getSqlSession(MapperConfigXMLFileName_default);
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        User user = mapper.selectOneByCaseName("密码长度超限");
+        RegisterInfoMapper mapper = sqlSession.getMapper(RegisterInfoMapper.class);
+        RegisterInfo registerInfo = mapper.selectOneByCaseName("密码长度超限");
 
-        System.out.println(user);
+        System.out.println(registerInfo);
     }
   //删除接口库的数据
     @Test(enabled = false)
@@ -53,6 +52,18 @@ public class MyBatisTest {
     @Test(enabled = false)
     public void test(){
         System.out.println("***********************执行了MybatisTest类************************");
+    }
+
+
+    @Test(enabled = false)
+    public void testUrlConfigFile(){
+        SqlSession sqlSession = MyBatisUtil.getSqlSession(MapperConfigXMLFileName_default);
+        RegisterInfoMapper mapper = sqlSession.getMapper(RegisterInfoMapper.class);
+        RegisterInfo registerInfo = mapper.selectOneByCaseName("密码长度超限");
+
+        String result = MyHttpUtils.doPost(registerInfo.getUsername(), registerInfo.getPassword());
+        System.out.println("测试结果为："+result);
+
     }
 
 }

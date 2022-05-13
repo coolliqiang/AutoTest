@@ -1,7 +1,5 @@
 package com.test.autotest.util;
 
-import com.test.autotest.bean.User;
-import com.test.autotest.mapper.UserMapper;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -9,17 +7,15 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-import org.apache.ibatis.session.SqlSession;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.List;
 
 public class MyHttpUtils {
     public static String doPost(String username,String password){
         String result = null;
         try {
-            String url = "http://192.168.1.101:8080/user/register";
+            String url = ConfigFile.getUrl(InterfaceName.REGISTERINFO);
             //1.创建post对象，以post方式提交接口请求
             HttpPost httpPost = new HttpPost(url);
             //2.提交参数
