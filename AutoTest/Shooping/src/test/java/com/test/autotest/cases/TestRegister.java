@@ -6,6 +6,8 @@ import com.test.autotest.mapper.UserMapper1;
 import com.test.autotest.util.DataUtils;
 import com.test.autotest.util.MyBatisUtil;
 import com.test.autotest.util.MyHttpUtils;
+import io.qameta.allure.Description;
+import io.qameta.allure.Story;
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -76,6 +78,8 @@ public class TestRegister {
         }
 
     }*/
+    @Description("验证注册接口")
+    @Story("测试注册接口")
     @Test(groups = "注册接口",description = "正确的用户名和密码")
     public void testRegister1(){
         boolean expected = true;
@@ -97,7 +101,8 @@ public class TestRegister {
             }
         }
     }
-
+    @Description("验证注册接口")
+    @Story("测试注册接口")
     @Test(groups = "注册接口",description = "用户名为空")
     public void testRegister2(){
         String caseName = "用户名为空";
@@ -121,7 +126,8 @@ public class TestRegister {
         SqlSession sqlSession = MyBatisUtil.getSqlSession(MapperConfigXMLFileName_default);
         return sqlSession.getMapper(RegisterInfoMapper.class);
     }
-
+    @Description("验证注册接口")
+    @Story("测试注册接口")
     @Test(groups = "注册接口",description = "密码为空")
     public void testRegister3(){
         String caseName = "密码为空";
@@ -140,7 +146,8 @@ public class TestRegister {
 
 
     }
-
+    @Description("验证注册接口")
+    @Story("测试注册接口")
     @Test(groups = "注册接口",description = "用户名已存在")
     public void testRegister4(){
         String caseName = "用户名已存在";
@@ -159,7 +166,8 @@ public class TestRegister {
         }
 
     }
-
+    @Description("验证注册接口")
+    @Story("测试注册接口")
     @Test(groups = "注册接口",description = "用户名带有空格字符")
     public void testRegister5(){
         String caseName = "用户名带有空格字符";
@@ -179,7 +187,8 @@ public class TestRegister {
         }
 
     }
-
+    @Description("验证注册接口")
+    @Story("测试注册接口")
     @Test(groups = "注册接口",description = "用户名长度超限")
     public void testRegister6(){
         String caseName = "用户名长度超限";
@@ -199,7 +208,8 @@ public class TestRegister {
         }
 
     }
-
+    @Description("验证注册接口")
+    @Story("测试注册接口")
     @Test(groups = "注册接口",description = "用户名长度少于规则长度")
     public void testRegister7(){
         String casesName = "用户名长度少于规则长度";
